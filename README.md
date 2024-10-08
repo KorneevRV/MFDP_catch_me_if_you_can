@@ -1,14 +1,37 @@
 # MFDP_catch_me_if_you_can
 
 Решение автоматизирует процесс определения заработной платы на основе данных о вакансии в области Data Jobs.
+<details>  
+<summary>Веб-интерфейс</summary>
+
+![](docs\images\prediction.gif)
+![](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/docs/images/prediction.gif)
+</details>
 
 # <ins>How-to</ins>
-## Работа с веб-интерфейсом и API <img src="https://img.shields.io/badge/status-в%20разработке-orange" alt="в разработке" width="100"/>
+## Запуск веб-интерфейса
+1. Переименовать все `.env.template` файлы в `.env`. При необходимости изменить переменные окружения в `.env` файлах.
+```bash
+find . -name ".env.template" -exec sh -c 'mv "$0" "${0%.template}"' {} \;
+```
 
+2. Запустить контейнеры:
+``` bash
+cd src
+docker compose build 
+docker compose up
+```
+3. Открыть веб-интерфейс по адресу: http://127.0.0.11/
 
+4. Следовать подсказкам в интерфейсе
+
+5. (Опционально) Запустить автотесты:
+```bash
+docker exec src-app-1 pytest -v
+```
 
 ## Работа с моделью
-Для работы с моделью необходимо:
+Для обучения модели необходимо:
 - Загрузить данные для обучения - [Яндекс.Диск](https://disk.yandex.ru/d/xKuLrDvpwh2wZQ)
 - Поместить данные в папку `/data` в корневом каталоге.
 - Код обучения модели содержится в папке `/notebooks`. Самая совершенная модель - [enhanced_model](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/notebooks/enhanced_model.ipynb).
@@ -17,8 +40,7 @@
 
 ### /docs
  - [Бизнес-анализ](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/docs/Business%20analysis.md)
- - Описание функционала <img src="https://img.shields.io/badge/status-в%20разработке-orange" alt="в разработке" width="100"/>
- - Документацию к API <img src="https://img.shields.io/badge/status-в%20разработке-orange" alt="в разработке" width="100"/>
+ - [Документация к веб-сервису](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/docs/software%20documentation.md)
 
 ### /notebooks
 Ноутбуки с обучением модели и тестированием гипотез:
@@ -26,7 +48,7 @@
 - [enhanced_model](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/notebooks/enhanced_model.ipynb) - ноутбук с экспериментами пол улучшению модели
 - [enhanced_model_embed](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/notebooks/enhanced_model_embed.ipynb) - ноутбук с экспериментами по преобразованию текста в эмбеддинги
 
-### /src <img src="https://img.shields.io/badge/status-в%20разработке-orange" alt="в разработке" width="100"/>
+### /src
 
 Исходные файлы для запуска приложения с веб-интерфейсом.
 
