@@ -4,7 +4,6 @@
 <details>  
 <summary>Веб-интерфейс</summary>
 
-![](docs\images\prediction.gif)
 ![](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/docs/images/prediction.gif)
 </details>
 
@@ -40,7 +39,7 @@ docker exec src-app-1 pytest -v
 
 ### /docs
  - [Бизнес-анализ](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/docs/Business%20analysis.md)
- - [Документация к веб-сервису](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/docs/software%20documentation.md)
+ - [Документация к веб-сервису](https://github.com/KorneevRV/MFDP_catch_me_if_you_can/blob/main/docs/Software%20documentation.md)
 
 ### /notebooks
 Ноутбуки с обучением модели и тестированием гипотез:
